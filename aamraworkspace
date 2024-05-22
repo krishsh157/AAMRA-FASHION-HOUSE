@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Enter Password</h2>
+        <div id="password-form">
+            <div class="form-group">
+                <input type="password" id="password" class="form-control" placeholder="Password">
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkPassword()">Submit</button>
+        </div>
+        <div id="content" style="display: none;">
+            <h1>Google Sheets Links</h1>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://docs.google.com/spreadsheets/d/1J-5P7cSeN6DPmtIVuwTpvmXOXHTJ7vriRAVLoPo_1gI/edit#gid=0" target="_blank">Google Sheet 1</a></li>
+                <li class="list-group-item"><a href="https://docs.google.com/spreadsheets/d/1J-5P7cSeN6DPmtIVuwTpvmXOXHTJ7vriRAVLoPo_1gI/edit#gid=0" target="_blank">Google Sheet 2</a></li>
+                <li class="list-group-item"><a href="https://docs.google.com/spreadsheets/d/1J-5P7cSeN6DPmtIVuwTpvmXOXHTJ7vriRAVLoPo_1gI/edit#gid=0" target="_blank">Google Sheet 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Password Protection Script -->
+    <script>
+        const correctPassword = "aamra123456"; // Set your password here
+
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            if (passwordInput === correctPassword) {
+                document.getElementById('password-form').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
